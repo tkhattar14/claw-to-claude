@@ -1,0 +1,15 @@
+{
+  "name": "claw-to-claude",
+  "description": "Migrate OpenClaw multi-agent setups to Claude Code Agent Teams",
+  "owner": {
+    "name": "tkhattar14"
+  },
+  "plugins": [
+    {
+      "name": "claw-to-claude",
+      "description": "Migrate your OpenClaw multi-agent setup to Claude Code Agent Teams. Reads OpenClaw config and workspace files, generates CC agent definitions with persistent memory, MCP configs, and scheduled tasks.",
+      "version": "0.1.0",
+      "source": "./"
+    }
+  ]
+}

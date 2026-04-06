@@ -17,8 +17,18 @@ Migrate an OpenClaw multi-agent setup to Claude Code Agent Teams.
 
 ## Installation
 
+First, add the marketplace. Then install the plugin.
+
 ```bash
-claude plugins install github:tkhattar14/claw-to-claude
+claude plugin marketplace add tkhattar14/claw-to-claude
+claude plugin install claw-to-claude@claw-to-claude
+```
+
+Or from inside Claude Code:
+
+```
+/plugin marketplace add tkhattar14/claw-to-claude
+/plugin install claw-to-claude@claw-to-claude
 ```
 
 ## Usage
