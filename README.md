@@ -33,22 +33,22 @@ Or from inside Claude Code:
 
 ## Usage
 
-**From a local snapshot**
-
-Copy your OpenClaw workspace to your local machine first, then run the migration:
-
-```bash
-scp -r user@host:~/openclaw-snapshot ./
-```
+Open Claude Code and run:
 
 ```
 /claw-to-claude:migrate --path ./openclaw-snapshot
 ```
 
-**Over SSH directly**
+Or connect directly to your OpenClaw host:
 
 ```
 /claw-to-claude:migrate --ssh user@host
+```
+
+If using `--path`, copy your OpenClaw workspace to your local machine first:
+
+```bash
+scp -r user@host:~/openclaw-snapshot ./
 ```
 
 ## How It Works
