@@ -313,27 +313,27 @@ git commit -m "chore: add MIT license"
 ### Task 6: Test with real OpenClaw snapshot
 
 **Files:**
-- Read: `~/Documents/matrix/openclaw-snapshot/` (existing snapshot from Pi)
+- Read: `~/openclaw-snapshot/` (your OpenClaw snapshot directory)
 
 - [ ] **Step 1: Load the plugin locally**
 
-Run: `claude --plugin-dir ~/Documents/matrix/claw-to-claude`
+Run: `claude --plugin-dir ~/claw-to-claude`
 
 - [ ] **Step 2: Run the migration command**
 
-Run: `/claw-to-claude:migrate --path ~/Documents/matrix/openclaw-snapshot`
+Run: `/claw-to-claude:migrate --path ~/openclaw-snapshot`
 
 - [ ] **Step 3: Verify Phase 1 output**
 
-Expected: Claude reads the snapshot, reports "Found 13 agents, 28 skills, X MCP servers, 14 cron jobs"
+Expected: Claude reads the snapshot, reports "Found N agents, M skills, X MCP servers, K cron jobs"
 
 - [ ] **Step 4: Verify Phase 2 output**
 
-Expected: Migration plan document generated with all 13 agents mapped, org hierarchy identified, skill consolidation decided
+Expected: Migration plan document generated with all agents mapped, org hierarchy identified, skill consolidation decided
 
 - [ ] **Step 5: Verify Phase 3 output**
 
-Expected: 13 agent `.md` files in `~/.claude/agents/`, shared skills in `~/.claude/skills/`, memory seeded
+Expected: Agent `.md` files in `~/.claude/agents/`, shared skills in `~/.claude/skills/`, memory seeded
 
 - [ ] **Step 6: Verify agents appear**
 
@@ -341,13 +341,13 @@ Run `/agents` in Claude Code — all migrated agents should be listed.
 
 - [ ] **Step 7: Test Agent Team spawn**
 
-Run: "Create an agent team with nate, roy, and jamie to review the backend architecture"
+Run: "Create an agent team with backend-engineer, frontend-engineer, and data-analyst to review the architecture"
 Expected: Three teammates spawn with correct roles and tools.
 
 - [ ] **Step 8: Fix any issues found and commit**
 
 ```bash
-cd ~/Documents/matrix/claw-to-claude
+cd ~/claw-to-claude
 git add -A
 git commit -m "fix: address issues found during real-world testing"
 ```
