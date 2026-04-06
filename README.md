@@ -18,7 +18,7 @@ Migrate an OpenClaw multi-agent setup to Claude Code Agent Teams.
 ## Installation
 
 ```bash
-claude plugins install github:onceuponme/claw-to-claude
+claude plugins install github:tkhattar14/claw-to-claude
 ```
 
 ## Usage
@@ -52,7 +52,7 @@ Reads all agent definitions (IDENTITY, SOUL, AGENTS, USER files), registered ski
 Generates a migration plan and displays it for your review before any files are written. You can inspect what will be created, renamed, or skipped, and abort if something looks wrong.
 
 **Phase 3 — Execute**
-Creates agent definition files under `~/.claude/agents/`, merges or installs shared skills, writes per-agent `mcpServers` frontmatter, converts cron jobs to CC scheduled triggers, and seeds agent memory from your existing MEMORY.md files.
+Creates agent definition files under `~/.claude/agents/`, merges or installs shared skills, documents MCP server configuration needed in project/user settings, converts cron jobs to CC scheduled triggers, and seeds agent memory from your existing MEMORY.md files.
 
 ## What Gets Migrated
 
@@ -60,7 +60,7 @@ Creates agent definition files under `~/.claude/agents/`, merges or installs sha
 |---|---|
 | Agent definitions (IDENTITY, SOUL, AGENTS, USER) | `~/.claude/agents/{name}.md` with persistent memory |
 | Skills (SKILL.md) | Merged into agent body or `~/.claude/skills/` |
-| MCP servers | Per-agent `mcpServers` frontmatter |
+| MCP servers | Project/user MCP settings (shared across teammates) |
 | Cron jobs | CC scheduled triggers |
 | Long-term memory (MEMORY.md) | `~/.claude/agent-memory/{name}/` |
 | Org hierarchy and routing | Lead agent routing instructions |
