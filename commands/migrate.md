@@ -473,7 +473,29 @@ Create `~/.claude/agent-memory/{name}/MEMORY.md` with the content from the agent
 
 Do NOT copy daily notes (`memory/YYYY-MM-DD.md`) -- these are ephemeral by design.
 
-### 3.5 Print post-migration summary
+### 3.5 Enable Agent Teams
+
+Check if `~/.claude/settings.json` exists and whether it already has the Agent Teams flag:
+
+```bash
+cat ~/.claude/settings.json 2>/dev/null
+```
+
+If the file exists, read it and check if `env.CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` is already set. If not, add it using the Edit tool to insert `"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"` into the `env` object. If no `env` object exists, create one.
+
+If the file does not exist, create it with the Write tool:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}
+```
+
+Tell the user: "Enabled Agent Teams in ~/.claude/settings.json. Restart Claude Code for it to take effect."
+
+### 3.6 Print post-migration summary
 
 After all artifacts are generated, print this summary:
 
@@ -490,15 +512,8 @@ After all artifacts are generated, print this summary:
 
 ### Next Steps
 
-1. **Enable Agent Teams:**
-   Add this to your `~/.claude/settings.json` under the `env` key:
-   ```json
-   {
-     "env": {
-       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-     }
-   }
-   ```
+1. **Agent Teams enabled automatically.**
+   The migration has added `"CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"` to your `~/.claude/settings.json`. Restart Claude Code for it to take effect.
 
 2. **Configure MCP Servers:**
    {For each MCP server that needs credentials:}
